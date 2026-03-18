@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Faculty Directory</title>
+  <style>
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+}
+
+.header {
+  background: linear-gradient(to right, #002147, #004aad);
+  color: white;
+  text-align: center;
+  padding: 30px;
+}
+
+.controls {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.controls input, .controls select {
+  padding: 10px;
+  width: 220px;
+  margin: 5px;
+  border-radius: 25px;
+  border: 1px solid #ccc;
+}
+
+.tabs {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  border: none;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #002147;
+  color: white;
+}
+
+.tabs button.active {
+  background: #004aad;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px 8%;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.avatar {
+  width: 70px;
+  height: 70px;
+  background: #002147;
+  color: white;
+  border-radius: 50%;
+  line-height: 70px;
+  font-size: 24px;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.card a {
+  text-decoration: none;
+  color: #004aad;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+.back-home {
+  text-align: center;
+  margin: 20px;
+}
+
+.back-home a {
+  text-decoration: none;
+  color: #002147;
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Faculty Directory</h2>
+  <p>Government Arts and Science College, Jayankondam</p>
+</div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Faculty Directory</title>
+<style>
+body{margin:0;font-family:Arial;background:#f4f7fb}
+.header{background:linear-gradient(to right,#002147,#004aad);color:#fff;text-align:center;padding:25px}
+.tabs{text-align:center;margin:20px}
+.tabs button{padding:10px 18px;margin:5px;border:none;border-radius:20px;background:#002147;color:#fff;cursor:pointer}
+.tabs button.active{background:#004aad}
+.controls{text-align:center;margin-bottom:20px}
+.controls input,.controls select{padding:8px 15px;margin:5px;border-radius:20px;border:1px solid #ccc}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;padding:20px 8%}
+.card{background:#fff;padding:18px;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.15);text-align:center;transition:.3s}
+.card:hover{transform:translateY(-8px)}
+.avatar{width:60px;height:60px;background:#002147;color:#fff;border-radius:50%;line-height:60px;font-size:20px;margin:auto;margin-bottom:10px}
+.card h3{margin:5px 0;font-size:15px}
+.card p{font-size:13px;color:#555}
+.card a{text-decoration:none;color:#004aad;font-weight:bold;font-size:13px}
+.hidden{display:none}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h2>Faculty Directory</h2>
+<p>Government Arts and Science College, Jayankondam</p>
+</div>
+
+<div class="tabs">
+<button onclick="showTab('permanent')" class="active">Permanent</button>
+<button onclick="showTab('guest')">GL / PTA</button>
+<button onclick="showTab('non')">Non-Teaching</button>
+</div>
+
+<div class="controls">
+<input type="text" id="searchInput" placeholder="Search name..." onkeyup="searchStaff()">
+<select id="deptFilter" onchange="searchStaff()">
+<option value="">All Departments</option>
+<option value="Tamil">Tamil</option>
+<option value="Mathematics">Mathematics</option>
+<option value="Computer Science">Computer Science</option>
+<option value="Commerce">Commerce</option>
+<option value="English">English</option>
+<option value="Admin">Admin</option>
+</select>
+</div>
+
+<div class="grid">
+
+<!-- ================= PERMANENT ================= -->
+
+<div class="card permanent" data-name="Rajamoorthy" data-dept="Admin">
+<div class="avatar">R</div>
+<h3>Dr. M. Rajamoorthy</h3>
+<p>Principal (F.A.C.)</p>
+<a href="tel:9442359395">📞 9442359395</a>
+</div>
+
+<div class="card permanent" data-name="Nandakumar" data-dept="Mathematics">
+<div class="avatar">N</div>
+<h3>Dr. S. Nandakumar</h3>
+<p>Assistant Professor - Mathematics</p>
+<a href="tel:9488892941">📞 9488892941</a>
+</div>
+
+<div class="card permanent" data-name="Vadivelan" data-dept="Tamil">
+<div class="avatar">V</div>
+<h3>Dr. S. Vadivelan</h3>
+<p>Assistant Professor - Tamil</p>
+<a href="tel:9976996912">📞 9976996912</a>
+</div>
+
+<div class="card permanent" data-name="Bavani" data-dept="Tamil">
+<div class="avatar">B</div>
+<h3>Dr. G. Bavani</h3>
+<p>Assistant Professor - Tamil</p>
+<a href="tel:9489873461">📞 9489873461</a>
+</div>
+
+<div class="card permanent" data-name="Karthikeyan" data-dept="Computer Science">
+<div class="avatar">K</div>
+<h3>Dr. G. Karthikeyan</h3>
+<p>Assistant Professor - Computer Science</p>
+<a href="tel:9750282827">📞 9750282827</a>
+</div>
+
+<div class="card permanent" data-name="Rajendran" data-dept="Computer Science">
+<div class="avatar">R</div>
+<h3>Mr. M. Rajendran</h3>
+<p>Assistant Professor - Computer Science</p>
+<a href="tel:9842326033">📞 9842326033</a>
+</div>
+
+<div class="card permanent" data-name="Sakthimurugan" data-dept="Commerce">
+<div class="avatar">S</div>
+<h3>Dr. K. Sakthimurugan</h3>
+<p>Assistant Professor - Commerce</p>
+<a href="tel:9488834195">📞 9488834195</a>
+</div>
+
+<div class="card permanent" data-name="Jaiganesh" data-dept="Commerce">
+<div class="avatar">J</div>
+<h3>Dr. S. Jaiganesh</h3>
+<p>Assistant Professor - Commerce</p>
+<a href="tel:8344206435">📞 8344206435</a>
+</div>
+
+<div class="card permanent" data-name="Anbarasan" data-dept="Admin">
+<div class="avatar">A</div>
+<h3>Dr. K. Anbarasan</h3>
+<p>Physical Director</p>
+<a href="tel:9489229685">📞 9489229685</a>
+</div>
+
+<div class="card permanent" data-name="Natarajan" data-dept="Admin">
+<div class="avatar">N</div>
+<h3>Dr. R. Natarajan</h3>
+<p>Librarian</p>
+<a href="tel:8248214089">📞 8248214089</a>
+</div>
+<div class="card permanent" data-name="Jayachandran" data-dept="Admin">
+<div class="avatar">J</div>
+<h3>Dr.P.Jayachandran</h3>
+<p>Tamil</p>
+<a href="tel:8248214089">📞 8248214089</a>
+</div>
+
+<!-- ================= GL / PTA ================= -->
+
+<div class="card guest" data-name="Akila" data-dept="Commerce">
+<div class="avatar">A</div>
+<h3>Dr. A. Akila</h3>
+<p>Guest Lecturer - Commerce</p>
+<a href="tel:6081384208">📞 6081384208</a>
+</div>
+
+<div class="card guest" data-name="Rayadurai" data-dept="Tamil">
+<div class="avatar">R</div>
+<h3>Dr. P. Rayadurai</h3>
+<p>Guest Lecturer - Tamil</p>
+<a href="tel:9095557874">📞 9095557874</a>
+</div>
+
+<div class="card guest" data-name="Velmurugan" data-dept="Tamil">
+<div class="avatar">V</div>
+<h3>Dr. K. Velmurugan</h3>
+<p>Guest Lecturer - Tamil</p>
+<a href="tel:7373145639">📞 7373145639</a>
+</div>
+
+<div class="card guest" data-name="Kalaiselvi" data-dept="Tamil">
+<div class="avatar">K</div>
+<h3>Dr. U. Kalaiselvi</h3>
+<p>Guest Lecturer - Tamil</p>
+<a href="tel:9095789245">📞 9095789245</a>
+</div>
+
+<div class="card guest" data-name="Ambiga" data-dept="Tamil">
+<div class="avatar">A</div>
+<h3>Dr. R. Ambiga</h3>
+<p>Guest Lecturer - Tamil</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Prabakaran" data-dept="Tamil">
+<div class="avatar">P</div>
+<h3>Dr. M.Prabakaran</h3>
+<p> Tamil</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Rathika" data-dept="Computer Science">
+<div class="avatar">R</div>
+<h3>Dr.D.Rathika </h3>
+<p> Guest Lecturer - computer Science</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Durgadevi" data-dept="Commerce">
+<div class="avatar">D</div>
+<h3>Dr.K.Durgadevi</h3>
+<p> Guest Lecturer - Commerce</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Kayalvizhi" data-dept="English">
+<div class="avatar">K</div>
+<h3>Dr.R.Kayalvizhi</h3>
+<p>Guest Lecturer - English</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Kalaiyarasi" data-dept="English">
+<div class="avatar">K</div>
+<h3>Dr.G.Kalaiyarasi</h3>
+<p>Guest Lecturer - English</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Priya" data-dept="English">
+<div class="avatar">P</div>
+<h3>Dr.J.Priya</h3>
+<p>Guest Lecturer - English</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Elakkiya" data-dept="English">
+<div class="avatar">E</div>
+<h3>Dr.S.Elakkiya</h3>
+<p>Guest Lecturer - English</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Mekala" data-dept="English">
+<div class="avatar">M</div>
+<h3>Dr.P.Mekala</h3>
+<p>Guest Lecturer - English</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Kolanchinathan" data-dept="Kolanchinathan">
+<div class="avatar">K</div>
+<h3>Dr.G.Kolanchinathan</h3>
+<p>Guest Lecturer - Commerce</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Senthil" data-dept="Commerce">
+<div class="avatar">S</div>
+<h3>Dr.A.Senthil</h3>
+<p>Guest Lecturer - Commerce</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Akalya" data-dept="Mathematics">
+<div class="avatar">A</div>
+<h3>Dr.R.G.Akalya</h3>
+<p>Guest Lecturer - Mathematics</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Seethadevi" data-dept="Mathematics">
+<div class="avatar">S</div>
+<h3>Dr.R.Seethadevi</h3>
+<p>Guest Lecturer - Mathematics</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Senthil" data-dept="Tamil">
+<div class="avatar">S</div>
+<h3>Dr.G.Senthil</h3>
+<p>Guest Lecturer - Tamil</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Mekala" data-dept="Computer Science">
+<div class="avatar">M</div>
+<h3>Mrs.S.Mekala</h3>
+<p>C.L.P Lecturer - Computer Science</p>
+<a href="tel:9159240967">📞 9159240967</a>
+</div>
+
+<div class="card guest" data-name="Roshini" data-dept="Computer Science">
+<div class="avatar">R</div>
+<h3>Mrs.K.Roshini</h3>
+<p>C.L.P Lecturer - Computer Science</p>
+<a href="tel:9159240967">📞 9363057312</a>
+</div>
+
+<div class="card guest" data-name="Devi" data-dept="Mathematics">
+<div class="avatar">D</div>
+<h3>Mrs.K.Devi</h3>
+<p>P.T.A Lecturer - Mathematics</p>
+<a href="tel:9159240967">📞 9348760245</a>
+</div>
+
+<div class="card guest" data-name="Najin" data-dept="English">
+<div class="avatar">N</div>
+<h3>Ms.J.Najin</h3>
+<p>P.T.A Lecturer - English</p>
+<a href="tel:9159240967">📞 8220430846</a>
+</div>
+
+<div class="card guest" data-name="Raja" data-dept="Computer Science">
+<div class="avatar">R</div>
+<h3>Mr.S.Raja</h3>
+<p>P.T.A Lecturer - Computer Science</p>
+<a href="tel:9159240967">📞 7639948464</a>
+</div>
+
+<div class="card guest" data-name="Viknesh Sharma" data-dept="Mathematics">
+<div class="avatar">V</div>
+<h3>Mr.N.Viknesh Sharma</h3>
+<p>P.T.A Lecturer - Mathematics</p>
+<a href="tel:9159240967">📞 8807302680</a>
+</div>
+
+<div class="card guest" data-name="Anbarasi" data-dept="English">
+<div class="avatar"></div>
+<h3>Mrs.A.Anbarasi</h3>
+<p>P.T.A Lecturer - English</p>
+<a href="tel:9159240967">📞 9363910332</a>
+</div>
+
+<div class="card guest" data-name="Sangari" data-dept="English">
+<div class="avatar">S</div>
+<h3>Ms.N.Sangari</h3>
+<p>P.T.A Lecturer - English</p>
+<a href="tel:9159240967">📞 6380249255</a>
+</div>
+
+<div class="card guest" data-name="Kasthuripraba" data-dept="English">
+<div class="avatar">K</div>
+<h3>Ms.G.Kasthuripraba</h3>
+<p>P.T.A Lecturer - English</p>
+<a href="tel:9159240967">📞 78821424552</a>
+</div>
+
+<div class="card guest" data-name="Sathiyadevi" data-dept="Tamil">
+<div class="avatar">S</div>
+<h3>Dr.R.Sathiyadevi</h3>
+<p>P.T.A Lecturer - Tamil</p>
+<a href="tel:9159240967">📞 8508492680</a>
+</div>
+
+<div class="card guest" data-name="Kumar" data-dept="Tamil">
+<div class="avatar">K</div>
+<h3>Mr.S.Kumar</h3>
+<p>P.T.A Lecturer - Tamil</p>
+<a href="tel:9159240967">📞 9688983399</a>
+</div>
+
+<div class="card guest" data-name="Rajagobal" data-dept="librariassistant">
+<div class="avatar">R</div>
+<h3>Mr.P. Rajagobal</h3>
+<p>P.T.A Lecturer - librariassistant</p>
+<a href="tel:9159240967">📞 7867891185</a>
+</div>
+
+
+
+
+<!-- (Remaining GL/PTA staff follow same pattern — shortened here to avoid message overflow, but structure same) -->
+
+<!-- ================= NON TEACHING ================= -->
+
+<div class="card non" data-name="Ganesan" data-dept="Admin">
+<div class="avatar">G</div>
+<h3>Mr. R. Ganesan</h3>
+<p>Bursar</p>
+<a href="tel:9788107984">📞 9788107984</a>
+</div>
+
+<div class="card non" data-name="Suresh" data-dept="Admin">
+<div class="avatar">S</div>
+<h3>Mr. K. Suresh</h3>
+<p>Superintendent</p>
+<a href="tel:9789175449">📞 9789175449</a>
+</div>
+
+</div>
+<div class="card non" data-name="Veerammal" data-dept="Officestaff">
+<div class="avatar">V</div>
+<h3>Mrs.T.Veerammal </h3>
+<p>Assistant</p>
+<a href="tel:6081384208">📞 7502954557</a>
+</div>
+
+<div class="card non" data-name="Sundharaman" data-dept="Officestaff">
+<div class="avatar">S</div>
+<h3>Mr.N.Sundharaman</h3>
+<p>Assistant Programmer</p>
+<a href="tel:6081384208">📞 9443398009</a>
+</div>
+
+<div class="card non" data-name="Palanisamy" data-dept="Officestaff">
+<div class="avatar">P</div>
+<h3>Mr.K.R.Palanisamy</h3>
+<p>Junior Assistant</p>
+<a href="tel:6081384208">📞 9943270578</a>
+</div>
+
+<div class="card guest" data-name="Manivelan" data-dept="officestaff">
+<div class="avatar">M</div>
+<h3>Mr.K.Manivelan</h3>
+<p>Junior Assistant</p>
+<a href="tel:6081384208">📞 6385425959</a>
+</div>
+
+<div class="card non" data-name="Aravazhi" data-dept="Officestaff">
+<div class="avatar">A</div>
+<h3>Mr.A.Aravazhi</h3>
+<p>Junior Assistant(depu.)</p>
+<a href="tel:6081384208">📞 8144448568</a>
+</div>
+
+
+
+<div class="back-home">
+  <a href="index.html">← Back to Home</a>
+</div>
+
+<script>
+
+function showTab(type) {
+  var cards = document.getElementsByClassName("card");
+  var buttons = document.querySelectorAll(".tabs button");
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  event.target.classList.add("active");
+
+  for (var i = 0; i < cards.length; i++) {
+    if (cards[i].classList.contains(type)) {
+      cards[i].style.display = "block";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+
+function searchStaff() {
+  var input = document.getElementById("searchInput").value.toLowerCase();
+  var dept = document.getElementById("deptFilter").value;
+  var cards = document.getElementsByClassName("card");
+
+  for (var i = 0; i < cards.length; i++) {
+    var name = cards[i].dataset.name.toLowerCase();
+    var department = cards[i].dataset.dept;
+
+    if ((name.includes(input)) &&
+        (dept === "" || department === dept)) {
+      cards[i].style.display = "block";
+    } else {
+      cards[i].style.display = "none";
+    }
+  }
+}
+
+showTab('permanent');
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>College Gallery</title>
+
+<style>
+   /* ===== HERO SECTION ===== */
+.gallery-hero{
+    height:50vh;
+    background:url('images/campus1.jpeg') center/cover no-repeat;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Dark Overlay */
+.gallery-hero::after{
+    content:"";
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:#2c5364(0, 0, 0, 0.6);
+    top:0;
+    left:0;
+}
+
+/* Hero Content Box */
+.hero-content{
+    position:relative;
+    text-align:center;
+    color:white;
+    padding:40px 60px;
+    border-radius:15px;
+    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,0.1);
+}
+
+.hero-content h1{
+    font-size:48px;
+    margin-bottom:15px;
+    letter-spacing:2px;
+}
+
+.hero-content p{
+    font-size:18px;
+    opacity:0.9;
+} 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins', sans-serif;
+    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    min-height:100vh;
+}
+
+/* Section */
+.gallery-section{
+    padding:80px 10%;
+    text-align:center;
+}
+
+/* Title */
+.gallery-title{
+    font-size:42px;
+    color:rgb(255, 255, 255);
+    margin-bottom:40px;
+    letter-spacing:1px;
+}
+
+/* Buttons */
+.filter-buttons{
+    margin-bottom:50px;
+}
+
+.filter-buttons button{
+    padding:12px 30px;
+    margin:10px;
+    border:none;
+    border-radius:30px;
+    background:rgba(255,255,255,0.15);
+    color:white;
+    font-weight:500;
+    cursor:pointer;
+    transition:0.3s;
+    backdrop-filter:blur(8px);
+}
+
+.filter-buttons button:hover{
+    background:cyan;
+    color:rgb(0, 0, 0);
+    transform:scale(1.05);
+}
+
+/* Gallery Grid */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:50px;
+}
+
+/* Images */
+.gallery img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:50%;
+    cursor:pointer;
+    transition:0.4s ease;
+    box-shadow:0 0 0px rgba(68, 0, 255, 0);
+}
+
+/* Glow Hover */
+.gallery img:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 30px rgba(0,255,255,0.8),
+               0 0 60px rgba(0,255,255,0.6);
+}
+
+/* Hide class */
+.hide{
+    display:none;
+}
+
+/* Lightbox */
+.lightbox{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rebeccapurple;
+    display:none;
+    justify-content:center;
+    align-items:center;
+}
+
+.lightbox img{
+    max-width:85%;
+    max-height:85%;
+    border-radius:20px;
+    box-shadow:0 0 40px cyan;
+    animation:zoom 0.3s ease;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(0.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close{
+    position:absolute;
+    top:30px;
+    right:50px;
+    font-size:40px;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+<!-- ===== HERO SECTION ===== -->
+<section class="gallery-hero">
+
+    <div class="hero-content">
+        <h1>College Gallery</h1>
+        <p>Capturing Memories, Celebrating Moments, Showcasing Our Campus Life.</p>
+    </div>
+
+</section>
+<section class="gallery-section">
+
+<h2 class="gallery-title">College Gallery</h2>
+
+<div class="filter-buttons">
+    <button onclick="filterGallery('all')">All</button>
+    <button onclick="filterGallery('event')">Events</button>
+    <button onclick="filterGallery('campus')">Campus</button>
+</div>
+
+<div class="gallery">
+
+    <!-- Event Images -->
+    <img src="images/event1.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event2.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event3.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event4.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event5.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event6.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event7.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event8.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event9.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event10.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event11.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event12.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event13.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event14.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event15.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event16.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event17.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event18.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event19.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event20.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event21.jpeg" class="event" onclick="openImage(this)">
+    <img src="images/event22.jpeg" class="event" onclick="openImage(this)">
+    <!-- Campus Images -->
+    <img src="images/campus1.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus2.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus3.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus4.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus5.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus6.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus7.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus8.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus9.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/compus10.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus11 (2).jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus12.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/clg_front.jpg" class="campus" onclick="openImage(this)">
+    <img src="images/clp-lap.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/clplab.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/cs-lab.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/principaloffice.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus11 (2).jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus1.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus11 (2).jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus1.jpg.jpeg" class="campus" onclick="openImage(this)">
+    <img src="images/campus11 (2).jpeg" class="campus" onclick="openImage(this)">
+
+</div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+    <span class="close" onclick="closeImage()">&times;</span>
+    <img id="preview">
+</div>
+
+<script>
+function filterGallery(category){
+    let images = document.querySelectorAll(".gallery img");
+
+    images.forEach(img => {
+        if(category === "all"){
+            img.classList.remove("hide");
+        } 
+        else if(img.classList.contains(category)){
+            img.classList.remove("hide");
+        } 
+        else{
+            img.classList.add("hide");
+        }
+    });
+}
+
+function openImage(img){
+    document.getElementById("lightbox").style.display="flex";
+    document.getElementById("preview").src = img.src;
+}
+
+function closeImage(){
+    document.getElementById("lightbox").style.display="none";
+}
+</script>
+
+</body>
+</html>
